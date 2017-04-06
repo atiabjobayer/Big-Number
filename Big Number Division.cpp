@@ -8,16 +8,13 @@ string strdiv(string s, LL n)
 {
     LL i, flg = 0, sum = 0, t;
     string ans;
-    for(i=0; i<s.size(); i++)
-    {
+    for(i=0; i<s.size(); i++){
         sum = sum * 10 + (s[i]-'0');
         t = sum / n;
-        if(t == 0 && flg == 0)
-        {
+        if(t == 0 && flg == 0){
             continue;
         }
-        else
-        {
+        else{
             ans += (t + '0');
             flg = 1;
             sum = (sum % n);
@@ -25,6 +22,7 @@ string strdiv(string s, LL n)
     }
     if(flg == 0)
         ans = "0";
+    
     return ans;
 }
 
