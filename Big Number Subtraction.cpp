@@ -7,18 +7,14 @@ int cmp(string a, string b)
 {
     int i, l = a.size();
 
-    if(a.size() > b.size())
-    {
+    if(a.size() > b.size()){
         return 1;
     }
-    if(a.size() < b.size())
-    {
+    if(a.size() < b.size()){
         return -1;
     }
-    else
-    {
-        for(i=0; i<l; i++)
-        {
+    else{
+        for(i=0; i<l; i++){
             if(a[i] > b[i])
                 return 1;
             if(b[i] > a[i])
@@ -34,13 +30,11 @@ string strsub(string x, string y)
 
     int i, j, flag=0, l, ll;
 
-    if(cmp(x, y) == 0)
-    {
+    if(cmp(x, y) == 0){
         return "0";
     }
 
-    if(cmp(x, y) == -1)
-    {
+    if(cmp(x, y) == -1){
         flag = 1;
         swap(x, y);
     }
@@ -50,18 +44,14 @@ string strsub(string x, string y)
     reverse(x.begin(), x.end());
     reverse(y.begin(), y.end());
 
-    for(i=ll; i<l; i++)
-    {
+    for(i=ll; i<l; i++){
         y += "0";
     }
 
-    for(i=0; i<l; i++)
-    {
-        if(x[i] < y[i])
-        {
+    for(i=0; i<l; i++){
+        if(x[i] < y[i]){
             j = i+1;
-            while(x[j] == '0' && j < l)
-            {
+            while(x[j] == '0' && j < l){
                 x[j] = '9';
                 j++;
             }
@@ -71,14 +61,12 @@ string strsub(string x, string y)
         a += (x[i] - y[i]) % 10 + '0';
     }
 
-    while(a[l-1] == '0')
-    {
+    while(a[l-1] == '0'){
         a.erase(a.end()-1);
         l--;
     }
 
-    if(flag)
-    {
+    if(flag){
         a += "-";
     }
 
