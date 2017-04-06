@@ -7,8 +7,7 @@ using namespace std;
 LL strmod(string s, LL n)
 {
     LL i, sum = 0;
-    for(i=0; i<s.size(); i++)
-    {
+    for(i=0; i<s.size(); i++){
         sum = sum * 10 + (s[i]-'0');
         sum %= n;
     }
